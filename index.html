@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Breakline — 2D Snooker</title>
-  <meta name="description" content="A polished top-down 2D snooker table game." />
+  <meta name="description" content="A polished top-down 2D snooker practice game." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -14,25 +14,25 @@
   <main class="app-shell">
     <header class="topbar">
       <a class="brand" href="./"><span class="brand-mark">✦</span><span><small>THE QUIET CLUB</small><strong>Breakline</strong></span></a>
-      <div class="match-meta"><span class="live-dot"></span> SOLO PRACTICE <i></i> FRAME 01</div>
-      <button class="reset-btn" id="newFrame">↻ New frame</button>
+      <div class="match-meta"><span class="live-dot"></span> TWO PLAYER <i></i> FRAME 01</div>
+      <div class="top-actions"><button class="sound-btn" id="soundToggle" aria-pressed="false">◖ Sound on</button><button class="reset-btn" id="newFrame">↻ New frame</button></div>
     </header>
 
     <section class="game-layout">
       <div class="table-column">
-        <div class="section-kicker">TABLE 02 / PRACTICE ROOM</div>
-        <div class="table-heading"><div><h1>Breakline</h1><p>Place the cue. Read the angle. Make the break.</p></div><div class="turn-badge"><span class="cue-dot"></span>Your turn</div></div>
+        <div class="section-kicker">TABLE 02 / TWO PLAYER FRAME</div>
+        <div class="table-heading"><div><h1>Breakline</h1><p>Place the cue. Read the angle. Make the break.</p></div><div class="turn-badge"><span class="cue-dot"></span><span id="turnLabel">Player 1</span> to play</div></div>
         <div class="table-frame"><canvas id="table" aria-label="Interactive 2D snooker table"></canvas></div>
         <div class="table-footer"><span><b id="statusText">Aim with your mouse</b> · click the table to shoot</span><span id="shotCount">0 shots</span></div>
       </div>
 
       <aside class="control-panel">
-        <div class="panel-head"><span class="section-kicker">FRAME CONTROL</span><h2>Stay on the line.</h2><p>Guide the cue ball with a clean stroke. Pot reds for one point, then clear the colors in order.</p></div>
-        <div class="score-card"><div><span class="section-kicker">CURRENT SCORE</span><strong id="score">0</strong></div><div class="high-break"><span>BEST BREAK</span><b id="bestBreak">0</b></div></div>
+        <div class="panel-head"><span class="section-kicker">FRAME CONTROL</span><h2>Stay on the line.</h2><p>Take turns after every stroke. Pot a ball, keep your break alive on the scoreboard, then hand the table over.</p></div>
+        <div class="score-card"><div class="section-kicker">LIVE SCORE</div><div class="player-score-grid"><div class="player-score active" id="playerCard0"><span>PLAYER 1</span><strong id="score0">0</strong><small>BREAK <b id="break0">0</b></small></div><div class="player-score" id="playerCard1"><span>PLAYER 2</span><strong id="score1">0</strong><small>BREAK <b id="break1">0</b></small></div></div></div>
         <div class="power-control"><div class="control-label"><span>SHOT POWER</span><b id="powerValue">42%</b></div><input id="power" type="range" min="12" max="92" value="42" /><div class="power-scale"><span>SOFT</span><span>FIRM</span></div></div>
         <div class="legend"><span class="section-kicker">BALL VALUES</span><div class="legend-row"><span class="ball-swatch red"></span><span>Red</span><b>1</b></div><div class="legend-row"><span class="ball-swatch yellow"></span><span>Yellow</span><b>2</b></div><div class="legend-row"><span class="ball-swatch green"></span><span>Green</span><b>3</b></div><div class="legend-row"><span class="ball-swatch brown"></span><span>Brown</span><b>4</b></div><div class="legend-row"><span class="ball-swatch blue"></span><span>Blue</span><b>5</b></div><div class="legend-row"><span class="ball-swatch pink"></span><span>Pink</span><b>6</b></div><div class="legend-row"><span class="ball-swatch black"></span><span>Black</span><b>7</b></div></div>
         <div class="tip"><span>i</span><p><strong>Quick tip</strong><br>Move your cursor around the cue ball to line up. Longer aim lines show a firmer stroke.</p></div>
-        <footer class="panel-footer"><span>BREAKLINE / 2D SNOOKER</span><span>v1.0</span></footer>
+        <footer class="panel-footer"><span>BREAKLINE / 2D SNOOKER</span><span>v1.1</span></footer>
       </aside>
     </section>
   </main>
